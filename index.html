@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Holi Celebration</title>
+    <!-- Add CSS  -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Add JS  -->
+
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -13,154 +17,5 @@
       <div id="holi-wishes"></div>
       <div id="holi-colors"></div>
     </div>
-
-    <script src="script.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-      }
-      .container {
-        width: 80%;
-        margin: 40px auto;
-        text-align: center;
-      }
-      #holi-message {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        animation: fadeIn 2s;
-      }
-      #holi-button {
-        background-color: #4caf50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.5s;
-      }
-      #holi-button:hover {
-        background-color: #3e8e41;
-      }
-      #holi-wishes {
-        margin-top: 40px;
-      }
-      .wish {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        animation: fadeIn 2s;
-      }
-      #holi-colors {
-        margin-top: 40px;
-      }
-      .color {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 10px;
-      }
-      .color.red {
-        background-color: #00eb3b;
-        height: 50px;
-        width: 50px;
-        border: 10px solid rgb(8, 8, 8);
-      }
-      .color.green {
-        background-color: #ff00ea;
-        height: 50px;
-        width: 50px;
-        border: 10px solid rgb(8, 8, 8);
-      }
-      .color.blue {
-        background-color: #ffd900;
-        height: 50px;
-        width: 50px;
-        border: 10px solid rgb(8, 8, 8);
-      }
-      .color.yellow {
-        background-color: #ff0000;
-        height: 50px;
-        width: 50px;
-        border: 10px solid rgb(8, 8, 8);
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      } /* Responsive code */
-      @media only screen and (max-width: 768px) {
-        .container {
-          width: 90%;
-        }
-        #holi-message {
-          font-size: 24px;
-        }
-        #holi-button {
-          padding: 10px 15px;
-        }
-        .wish {
-          font-size: 18px;
-        }
-        .color {
-          width: 30px;
-          height: 30px;
-        }
-      }
-      @media only screen and (max-width: 480px) {
-        .container {
-          width: 95%;
-        }
-        #holi-message {
-          font-size: 18px;
-        }
-        #holi-button {
-          padding: 10px 10px;
-        }
-        .wish {
-          font-size: 14px;
-        }
-        .color {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    </style>
-    <script>
-      let holiButton = document.getElementById('holi-button');
-      let holiMessage = document.getElementById('holi-message');
-      let holiWishes = document.getElementById('holi-wishes');
-      let holiColors = document.getElementById('holi-colors');
-      holiButton.addEventListener('click', celebrateHoli);
-      function celebrateHoli() {
-        holiMessage.textContent = 'Happy Holi!';
-        holiButton.style.display = 'none';
-        //  Create wishes
-        let wishes = [
-          'May this Holi bring colors of joy and happiness to your life!',
-          'Wishing you a Holi filled with love,  laughter, and colors!',
-          'May this Holi be a celebration of love, friendship,and togetherness!',
-        ];
-
-        for (let i = 0; i < wishes.length; i++) {
-          let wish = document.createElement('p');
-          wish.className = 'wish';
-          wish.textContent = wishes[i];
-          holiWishes.appendChild(wish);
-        }
-        // Create colors
-        let colors = ['red', 'green', 'blue', 'yellow'];
-        for (let i = 0; i < colors.length; i++) {
-          let color = document.createElement('div');
-          color.className = 'color ' + colors[i];
-          holiColors.appendChild(color);
-        }
-      }
-    </script>
   </body>
 </html>
